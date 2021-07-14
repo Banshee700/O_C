@@ -83,7 +83,7 @@ const char *clock_fraction_names[] = {
 
 static constexpr uint32_t TRIGGER_MASK_GRID = OC::DIGITAL_INPUT_1_MASK;
 static constexpr uint32_t TRIGGER_MASK_ARP = OC::DIGITAL_INPUT_2_MASK;
-static constexpr uint32_t kTriggerOutTicks = 1000U / OC_CORE_TIMER_RATE;
+static constexpr uint32_t kTriggerOutTicks = 5000U / OC_CORE_TIMER_RATE;
 
 enum CellSettings {
   CELL_SETTING_TRANSFORM,
@@ -461,7 +461,7 @@ void AutomatonnetzState::update_outputs(bool chord_changed, int transpose, int i
     case OUTPUTA_MODE_TRIG:
       if (chord_changed) {
         trigger_out_ticks_ = kTriggerOutTicks;
-        OC::DAC::set_octave(DAC_CHANNEL_A, 5);
+        OC::DAC::set_octave(DAC_CHANNEL_A, 10);
       }
       break;
     case OUTPUTA_MODE_ARP:

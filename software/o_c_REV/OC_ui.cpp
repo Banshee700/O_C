@@ -197,7 +197,7 @@ UiMode Ui::Splashscreen(bool &reset_settings) {
 
     menu::DefaultTitleBar::Draw();
     #ifdef BUCHLA_cOC
-      graphics.print("NLM card O_C");
+      graphics.print("NLM CV Polymorpher");
     #elif defined(VOR)
       graphics.print("Plum Audio O_C+");
     #else
